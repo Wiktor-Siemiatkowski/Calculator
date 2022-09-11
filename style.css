@@ -1,0 +1,48 @@
+.container {
+    background-color: pink;
+    border: solid black;
+    width: 500px;
+    height: 500px;
+}
+
+.toprow{
+    display: flex;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    width: 350px;
+    height: 100px;
+    margin: 15px;
+}
+
+.clear {
+    font-size: 32px;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+}
+
+.content {
+    display: flex;
+}
+
+.numpad {
+    margin: 15px;
+    width: 350px;
+    height: 300px;;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.operators {
+    width: 100px;
+    height: 300px;
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
