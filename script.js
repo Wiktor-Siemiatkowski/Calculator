@@ -1,3 +1,5 @@
+let operationNums = [];
+
 // Display DOM manipulators
 const display = document.querySelector('.display');
 display.textContent = '';
@@ -28,20 +30,29 @@ num8.addEventListener('click', () => inputNums(8));
 const num9 = document.querySelector('.num9');
 num9.addEventListener('click', () => inputNums(9));
 
+// Operator buttons and function
 
-const addition = document.querySelector('.add');
-
-const calculate = document.querySelector('.operate');
-
-let operationNums = [];
-
-addition.addEventListener('click', () => {
+function addOperator(operator) {
     operationNums.push(display.textContent);
-    operationNums.push('+');
+    operationNums.push(`${operator}`);
     display.textContent = '';
     let operationNumsJoin = operationNums.join(' ');
     subDisplay.textContent = `${operationNumsJoin}`;
-});
+} 
+
+const addition = document.querySelector('.add');
+addition.addEventListener('click', () => addOperator('+'));
+const subtraction = document.querySelector('.subtract');
+subtraction.addEventListener('click', () => addOperator('-'));
+const division = document.querySelector('.divide');
+division.addEventListener('click', () => addOperator('/'));
+const multiplication = document.querySelector('.multiply');
+multiplication.addEventListener('click', () => addOperator('*'));
+
+
+
+// Main operate button and function
+const calculate = document.querySelector('.operate');
 
 calculate.addEventListener('click', () => {
     display.textContent = operate(parseInt(operationNums[0]), parseInt(display.textContent), operationNums[1]);
@@ -49,6 +60,13 @@ calculate.addEventListener('click', () => {
     subDisplay.textContent = '';
 });
 
+// Clear Button function
+const clearBtn = document.querySelector('.clear');
+clearBtn.addEventListener('click', () => {
+    operationNums = [];
+    display.textContent = '';
+    subDisplay.textContent = '';
+});
 
 // Basic math functions
 function add(a, b) {
