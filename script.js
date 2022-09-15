@@ -11,6 +11,8 @@ function inputNums(num) {
     return display.textContent = display.textContent + `${num}`;
 };
 
+const num0 = document.querySelector('.num0');
+num0.addEventListener('click', () => inputNums(0));
 const num1 = document.querySelector('.num1');
 num1.addEventListener('click', () => inputNums(1));
 const num2 = document.querySelector('.num2');
@@ -54,7 +56,7 @@ multiplication.addEventListener('click', () => addOperator('*'));
 const calculate = document.querySelector('.operate');
 
 calculate.addEventListener('click', () => {
-    display.textContent = operate(parseFloat(operationNums[0]), parseFloat(display.textContent), operationNums[1]).toFixed(2);
+    display.textContent = +operate(parseFloat(operationNums[0]), parseFloat(display.textContent), operationNums[1]).toFixed(2);
     operationNums = [];
     subDisplay.textContent = '';
 });
