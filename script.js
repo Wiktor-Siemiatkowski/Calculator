@@ -50,12 +50,11 @@ const multiplication = document.querySelector('.multiply');
 multiplication.addEventListener('click', () => addOperator('*'));
 
 
-
 // Main operate button and function
 const calculate = document.querySelector('.operate');
 
 calculate.addEventListener('click', () => {
-    display.textContent = operate(parseInt(operationNums[0]), parseInt(display.textContent), operationNums[1]);
+    display.textContent = operate(parseFloat(operationNums[0]), parseFloat(display.textContent), operationNums[1]).toFixed(2);
     operationNums = [];
     subDisplay.textContent = '';
 });
