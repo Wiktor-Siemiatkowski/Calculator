@@ -50,17 +50,13 @@
     justify-content: center;
 }
 
-.num0 {
-    grid-column: 2;
-}
-
 .operators {
     width: 100px;
     height: 300px;
     margin: 15px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 .btn,
 .numbtn {

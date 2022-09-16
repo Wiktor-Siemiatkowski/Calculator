@@ -1,3 +1,4 @@
+// Display numbers array
 let operationNums = [];
 
 // Display DOM manipulators
@@ -31,6 +32,20 @@ const num8 = document.querySelector('.num8');
 num8.addEventListener('click', () => inputNums(8));
 const num9 = document.querySelector('.num9');
 num9.addEventListener('click', () => inputNums(9));
+
+// Float dot DOM manipulator and function
+
+const floatDot = document.querySelector('.float');
+floatDot.addEventListener('click', () => {
+    if (display.textContent.includes('.')) {
+        floatDot.getAttribute('disabled');
+    } else {
+        inputNums('.')}});
+
+// Delete button DOM manipulator and function
+
+const deleteBtn = document.querySelector('.del');
+deleteBtn.addEventListener('click', () => display.textContent = display.textContent.slice(0, -1));
 
 // Operator buttons and function
 
