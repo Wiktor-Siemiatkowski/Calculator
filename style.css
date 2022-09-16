@@ -1,6 +1,30 @@
+* {
+    font-family: 'Domine', serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size: 48px;
+}
+
+footer {
+    height: 25px;
+    margin: auto 0 0 0; 
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+}
+
 .container {
-    background-color: pink;
-    border: solid black;
+    background-color: #efe951;
     width: 500px;
     height: 500px;
 }
@@ -14,14 +38,15 @@
     flex-direction: column;
     font-size: 24px;
     text-align: right;
-    background-color: grey;
+    background-color: #92C80D;
     width: 350px;
     height: 100px;
-    margin: 15px;
+    margin: 25px;
 }
 
 .subdisplay {
-    height: 20px;
+    border-bottom: solid #618508;
+    height: 25px;
     text-align: left;
 }
 
@@ -33,7 +58,7 @@
     font-size: 32px;
     width: 100px;
     height: 100px;
-    margin: 15px;
+    margin: 25px;
 }
 
 .content {
@@ -41,9 +66,8 @@
 }
 
 .numpad {
-    margin: 15px;
-    width: 350px;
-    height: 300px;;
+    width: 375px;
+    height: 350px;;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -51,14 +75,15 @@
 }
 
 .operators {
-    width: 100px;
-    height: 300px;
-    margin: 15px;
+    width: 125px;
+    height: 350px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
 }
 .btn,
 .numbtn {
+    background-color: #92C80D;
+    border: solid 1px;
     font-size: 32px;
 }
