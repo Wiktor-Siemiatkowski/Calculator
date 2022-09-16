@@ -50,12 +50,21 @@ deleteBtn.addEventListener('click', () => display.textContent = display.textCont
 // Operator buttons and function
 
 function addOperator(operator) {
-    operationNums.push(display.textContent);
-    operationNums.push(`${operator}`);
-    display.textContent = '';
-    let operationNumsJoin = operationNums.join(' ');
-    subDisplay.textContent = `${operationNumsJoin}`;
-} 
+    if (operationNums.length == 0) { 
+        operationNums.push(display.textContent);
+        operationNums.push(`${operator}`);
+        display.textContent = '';
+        let operationNumsJoin = operationNums.join(' ');
+        subDisplay.textContent = `${operationNumsJoin}`;
+    } else {
+        operationNums[0] = +operate(parseFloat(operationNums[0]), parseFloat(display.textContent), operationNums[1]).toFixed(2);
+        operationNums.pop();
+        operationNums.push(`${operator}`);
+        display.textContent = '';
+        let operationNumsJoin = operationNums.join(' ');
+        subDisplay.textContent = `${operationNumsJoin}`;
+    }
+};
 
 const addition = document.querySelector('.add');
 addition.addEventListener('click', () => addOperator('+'));
