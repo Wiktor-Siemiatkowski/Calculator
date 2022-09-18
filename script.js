@@ -97,11 +97,14 @@ document.addEventListener('keydown', (e) => {if (e.key == '*') {addOperator('*')
 // Main operate button and function
 const calculate = document.querySelector('.operate');
 
-calculate.addEventListener('click', () => {
+function operateMain() {
     display.textContent = +operate(parseFloat(operationNums[0]), parseFloat(display.textContent), operationNums[1]).toFixed(2);
     operationNums = [];
     subDisplay.textContent = '';
-});
+}
+
+calculate.addEventListener('click', () => operateMain());
+document.addEventListener('keydown', (e) => {if (e.key == 'Enter') {operateMain()}});
 
 // Clear Button function
 const clearBtn = document.querySelector('.clear');
